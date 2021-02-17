@@ -1,0 +1,115 @@
+<DOCTYPE html>
+    <html>
+        <head>
+            <style>
+                body 
+                {
+                    background-color:black;
+                }
+
+                .red-text /*This is a class. Use a period to set it as a class*/
+                {
+                    color: red;
+                }
+                table, tr, td/*This points to elememts*/
+                {
+                    border-style: solid;
+                    border-color: rgb(255, 240, 240);
+                    background-color:rgb(243, 255, 240)
+
+                /*Use a # to point to an element by ID name*/    
+                }
+            </style>
+
+            <script>
+                //set up equation to be evaluated
+                function equationSetUp(expression)
+                {
+                    document.getElementById("equation").value += expression;
+                }
+
+                //evaluate the equation from equationSetUp
+                function calc()
+                {
+                    var x = document.getElementById("equation").value;
+                    var answer = eval(x);//Using built in eval funtion to evaluate the equation 
+                    document.getElementById("result").value = answer;
+                }
+
+                //Clear the screen before entering new equation. 
+                function clearScreen()
+                {
+                    document.getElementById("equation").value = "";
+                    document.getElementById("result").value = "";
+                }
+            </script>
+
+            <title>MY first HTML program</title>
+            <h1 class= "red-text" >Simple calculator written in HTML, CSS and JavaScript</h1>
+        </head>
+            
+           
+            <body>
+                <table>
+                    <tr>
+                        <td>
+                            <!--Each time the button is clicked it sends the data to equationSetUp function-->
+                            <button type="button" value="0" onClick="equationSetUp(0)">0</button>
+                            <button type="button" value="1" onClick="equationSetUp(1)">1</button>
+                            <button type="button" value="2" onClick="equationSetUp(2)">2</button>
+                            <button type="button" value="3" onClick="equationSetUp(3)">3</button>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                            <!--Each time the button is clicked it sends the data to equationSetUp function-->
+                            <button type="button" value="4" onClick="equationSetUp(4)">4</button>
+                            <button type="button" value="5" onClick="equationSetUp(5)">5</button>
+                            <button type="button" value="6" onClick="equationSetUp(6)">6</button>
+                            <button type="button" value="7" onClick="equationSetUp(7)">7</button>
+                        </td>
+                        
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <!--Each time the button is clicked it sends the data to equationSetUp function-->
+                            <button type="button" value="8" onClick="equationSetUp(8)">8</button>
+                            <button type="button" value="9" onClick="equationSetUp(9)">9</button>
+                            
+                        </td>
+                        
+                    </tr>
+
+                    <tr>
+                        <!--Each time the button is clicked it sends the data to equationSetUp function-->
+                        <td>
+                            <button type="button" value="+" onclick="equationSetUp('+')">+</button>
+                            <button type="button" value="/" onclick="equationSetUp('/')">/</button>
+                            <button type="button" value="-" onclick="equationSetUp('-')">-</button>
+                            <button type="button"value="*" onclick="equationSetUp('*')">*</button>
+                            
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="equation">Equation</label>
+                            <input id="equation" type="test">
+
+                            <label for="result">Answer</label>
+                            <input id="result" type="text">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <!-- Call calc function  or clearScreen function-->
+                            <button id="cal" type="button" onclick="calc()">Submit</button>
+                            <button id ="clear" type="button" onclick="clearScreen()">Clear Equation</button>
+                        </td>
+                    </tr>
+
+                </table>
+            </body>
+    </html>
